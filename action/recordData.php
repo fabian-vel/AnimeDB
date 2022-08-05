@@ -14,7 +14,7 @@
     }
 
     function uploadImg(){
-        $direccion='/imagenes/';
+        $direccion='imagenes/';
         $fecha=new DateTime();
         $nombreImg=$_FILES['img']['name'];
 
