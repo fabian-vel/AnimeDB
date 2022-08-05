@@ -1,4 +1,5 @@
-<?php include('./header.php');
+<?php 
+include('./header.php');
 include('./connection/connection.php');
 include('./action/recordData.php');
 $obj = new connection();

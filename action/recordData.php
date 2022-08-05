@@ -17,14 +17,9 @@
         $direccion='/imagenes';
         $fecha=new DateTime();
         $nombreImg=$_FILES['archivo']['name'];
-        $imagen_temp=$_FILES['archivo']['tmp_name'];
 
         $imagen=$fecha->getTimestamp()."_".$nombreImg;
-        if(move_uploaded_file($imagen_temp,$direccion.$imagen."jpg")){
-            echo "imagen guardada";
-        }else{
-            echo "imagen no guardada";
-        }
+        move_uploaded_file($_FILES['archivo']['tmp_name'],$direccion.$imagen);
         return $imagen;
     }
 ?>
