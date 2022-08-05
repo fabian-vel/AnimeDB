@@ -12,7 +12,7 @@ $obj = new connection();
         <div class="row">
             <div class="col-md-4">
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         Nombre del anime: <input required class="from-comtrol" type="text" name="nombre" id="">
                         <br>
                         Imagen del anime: <input class="from-comtrol" type="file" name="archivo" id="">
