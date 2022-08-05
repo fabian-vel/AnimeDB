@@ -16,10 +16,10 @@
     function uploadImg(){
         $direccion='/imagenes';
         $fecha=new DateTime();
-        $nombreImg=$_FILES['archivo']['name'];
+        $nombreImg=$_FILES['img']['name'];
 
         $imagen=$fecha->getTimestamp()."_".$nombreImg;
-        move_uploaded_file($_FILES['archivo']['tmp_name'],$direccion.$imagen);
+        move_uploaded_file($_FILES['img']['tmp_name'],$direccion.$imagen);
         return $imagen;
     }
 ?>

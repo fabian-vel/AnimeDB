@@ -16,7 +16,7 @@ $obj = new connection();
                     <form method="post" enctype="multipart/form-data">
                         Nombre del anime: <input required class="from-comtrol" type="text" name="nombre" id="">
                         <br>
-                        Imagen del anime: <input class="from-comtrol" type="file" name="archivo" id="">
+                        Imagen del anime: <input class="from-comtrol" type="file" name="img" id="">
                         <br>
                         Estado <br>
                         Terminado <input class="from-comtrol" type="radio" name="estado" value="0">
