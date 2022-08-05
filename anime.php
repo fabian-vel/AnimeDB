@@ -14,7 +14,7 @@ $obj = new connection();
             <div class="col-md-4">
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
-                        Nombre del anime: <input required class="from-comtrol" type="text" name="nombre" id="">
+                        Nombre del anime: <input class="from-comtrol" type="text" name="nombre" id="">
                         <br>
                         Imagen del anime: <input class="from-comtrol" type="file" name="img" id="">
                         <br>
@@ -25,19 +25,38 @@ $obj = new connection();
                         Descripcion: 
                         <textarea  class="form-control" type="textarea" name="descripcion"  rows="3" id=""></textarea>
                         <br>
-                        <input class="btn btn-success" type="submit" name="Enviar" value="Enviar">
-                    </form>
+                        <input class="btn btn-success" type="submit" name="Enviar" value="Enviar"> 
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card-body">
-                    <form action="anime.php">
+                    <form method="post">
                         Temporadas del anime
                         <br>
-                        Temporada: <input type="number" name="temporadaa" id="">
+                        No. Temporada: <input type="number" name="Notemporadaa" id="">
                         <br>
-                        capitulos: <input type="number" name="capitulosa" id="">
-                        <br><br>
+                        <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
+                        <br>
+                        
+                        <?php
+                        $num=1;
+                        if(isset($_POST['Enviar1'])){
+                            $num=$_POST['Notemporadaa'];
+                        }
+                        ?>
+                        <input type="hidden" name="tempor" value="<?php echo $num;?>">
+                        <?php
+                            for($i=1;$i<=$num;$i++){
+                                $cap="capitulos".$i;
+                        ?>
+                        capitulos de la temporada <?php echo $i; ?>: <input type="number" name="<?php echo $cap;?>">
+                        <br>
+                        <?php
+                        }
+                        ?>
+                        <br>
+                        <input class="btn btn-success" type="submit" name="Enviar2" value="Guardar temporadas">
+                        <br>
                         Temporadas vista
                         <br>
                         Temporada: <input type="number" name="temporadav" id="">

@@ -10,7 +10,6 @@ class connection{
             try {
                 $this->connection= new PDO("mysql:host=$this->servidor;dbname=animedb",$this->user,$this->password);
                 $this->connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-                echo "conexion establacida";
             }catch( PDOException $e){
                 return "falla de conexion".$e;
             }
