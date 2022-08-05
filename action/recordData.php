@@ -14,12 +14,17 @@
     }
 
     function uploadImg(){
-        $direccion='imagenes/';
+        $directorio='imagenes/';
         $fecha=new DateTime();
         $nombreImg=$_FILES['img']['name'];
-
-        $imagen=$fecha->getTimestamp()."_".$nombreImg;
-        move_uploaded_file($_FILES['img']['tmp_name'],$direccion.$imagen);
+        if(!file_exists($directorio)){
+            mkdir($directorio,0777,true);
+            $imagen=$fecha->getTimestamp()."_".$nombreImg;
+            move_uploaded_file($_FILES['img']['tmp_name'],$directorio.$imagen);
+        }elseif(file_exists($directorio)){
+            $imagen=$fecha->getTimestamp()."_".$nombreImg;
+            move_uploaded_file($_FILES['img']['tmp_name'],$directorio.$imagen);
+        }
         return $imagen;
     }
 ?>
