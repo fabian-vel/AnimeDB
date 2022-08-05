@@ -14,10 +14,17 @@
     }
 
     function uploadImg(){
+        $direccion='/imagenes';
         $fecha=new DateTime();
-        $imagen=$fecha->getTimestamp()."_".$_FILES['archivo']['name'];
+        $nombreImg=$_FILES['archivo']['name'];
         $imagen_temp=$_FILES['archivo']['tmp_name'];
-        move_uploaded_file($imagen_temp,"/imagenes".$imagen);
+
+        $imagen=$fecha->getTimestamp()."_".$nombreImg;
+        if(move_uploaded_file($imagen_temp,$direccion.$imagen."jpg")){
+            echo "imagen guardada";
+        }else{
+            echo "imagen no guardada";
+        }
         return $imagen;
     }
 ?>
