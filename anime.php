@@ -11,33 +11,35 @@ $obj = new connection();
             Registro del Anime
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
-                        Nombre del anime: <input class="from-comtrol" type="text" name="nombre" id="">
+                        <label for="" style="width:30%;">Nombre del anime: </label>
+                        <input type="text" name="nombre" style="aling:auto">
                         <br>
-                        Imagen del anime: <input class="from-comtrol" type="file" name="img" id="">
+                        <label for="" style="width:30%;">Imagen del anime: </label>
+                        <input class="from-comtrol" type="file" name="img">
                         <br>
-                        Estado <br>
+                        <label for="" style="width:30%;">Estado:</label>
                         Terminado <input class="from-comtrol" type="radio" name="estado" value="0">
                         En Proceso <input class="from-comtrol" type="radio" name="estado" value="1">
                         <br>
-                        Descripcion: 
-                        <textarea  class="form-control" type="textarea" name="descripcion"  rows="3" id=""></textarea>
-                        <br>
-                        <input class="btn btn-success" type="submit" name="Enviar" value="Enviar"> 
+                        <label for="" style="width:30%;">Descripcion</label>
+                        <textarea class="form-control" type="textarea" name="descripcion" rows="3" id=""></textarea>
+                    </form>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card-body">
                     <form method="post">
                         Temporadas del anime
                         <br>
-                        No. Temporada: <input type="number" name="Notemporadaa" id="">
+                        <label for="" style="width:30%;">No. Temporada:</label>
+                        <input type="number" name="Notemporadaa" id="" min="1" value="1">
                         <br>
                         <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
                         <br>
-                        
+
                         <?php
                         $num=1;
                         if(isset($_POST['Enviar1'])){
@@ -49,7 +51,8 @@ $obj = new connection();
                             for($i=1;$i<=$num;$i++){
                                 $cap="capitulos".$i;
                         ?>
-                        capitulos de la temporada <?php echo $i; ?>: <input type="number" name="<?php echo $cap;?>">
+                        <label for="" style="width:30%;">Capitulos de la temp. <?php echo $i; ?>: </label>
+                        <input type="number" name="<?php echo $cap;?>" min="1">
                         <br>
                         <?php
                         }
@@ -65,10 +68,10 @@ $obj = new connection();
                     </form>
                 </div>
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="card-body">
                     <form action="anime.php">
-                    Genero: 
+                        Genero:
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Seleccione un genero</option>
                             <option value="1">One</option>
@@ -76,7 +79,7 @@ $obj = new connection();
                             <option value="3">Three</option>
                         </select>
                         <br>
-                        Tipo: 
+                        Tipo:
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Seleccione un tipo</option>
                             <option value="1">One</option>
@@ -84,11 +87,11 @@ $obj = new connection();
                             <option value="3">Three</option>
                         </select>
                     </form>
-                </div>
-            </div>
+                </div> -->
         </div>
-
     </div>
+
+</div>
 </div>
 
 <?php include('./footer.php') ?>
