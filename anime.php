@@ -15,7 +15,7 @@ $obj = new connection();
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
                         <label for="" style="width:30%;">Nombre del anime: </label>
-                        <input type="text" name="nombre" style="aling:auto">
+                        <input required type="text" name="nombre" style="aling:auto">
                         <br>
                         <label for="" style="width:30%;">Imagen del anime: </label>
                         <input class="from-comtrol" type="file" name="img">
@@ -26,6 +26,23 @@ $obj = new connection();
                         <br>
                         <label for="" style="width:30%;">Descripcion</label>
                         <textarea class="form-control" type="textarea" name="descripcion" rows="3" id=""></textarea>
+                        <div class="form-group form-group-inline">
+                        <label for="genero">Genero:</label>
+                        <select name="genero" class="form-select" aria-label="Default select example">
+                            <option selected>Seleccione un genero</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        </div>
+                        <br>
+                        <label for="">Tipo:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Seleccione un tipo</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </form>
                 </div>
             </div>
@@ -35,7 +52,7 @@ $obj = new connection();
                         Temporadas del anime
                         <br>
                         <label for="" style="width:30%;">No. Temporada:</label>
-                        <input type="number" name="Notemporadaa" id="" min="1" value="1">
+                        <input type="number" name="Notemporadaa" id="" min="1" required>
                         <br>
                         <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
                         <br>
