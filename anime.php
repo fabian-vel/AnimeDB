@@ -27,13 +27,13 @@ $obj = new connection();
                         <label for="" style="width:30%;">Descripcion</label>
                         <textarea class="form-control" type="textarea" name="descripcion" rows="3" id=""></textarea>
                         <div class="form-group form-group-inline">
-                        <label for="genero">Genero:</label>
-                        <select name="genero" class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un genero</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                            <label for="genero">Genero:</label>
+                            <select name="genero" class="form-select" aria-label="Default select example">
+                                <option selected>Seleccione un genero</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
                         </div>
                         <br>
                         <label for="">Tipo:</label>
@@ -51,12 +51,14 @@ $obj = new connection();
                     <form method="post">
                         Temporadas del anime
                         <br>
+                        <div class="input-group">
+                            <input type="number" name="Notemporadaa" id="" min="1" required>
+                            <div class="input-group-append">
+                                <input class="btn btn-outline-secondary" type="submit" name="Enviar1" value="Enviar T">
+                            </div>
+                        </div>
                         <label for="" style="width:30%;">No. Temporada:</label>
-                        <input type="number" name="Notemporadaa" id="" min="1" required>
                         <br>
-                        <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
-                        <br>
-
                         <?php
                         $num=1;
                         if(isset($_POST['Enviar1'])){
