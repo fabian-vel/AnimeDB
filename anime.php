@@ -8,14 +8,14 @@ $obj = new connection();
 <div class="container">
     <div class="card">
         <div class="card-header">
-            Registro del Anime
+            <h3>Registro del Anime</h3>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
                         <label for="" style="width:30%;">Nombre del anime: </label>
-                        <input required type="text" name="nombre" style="aling:auto">
+                        <input required type="text" name="nombre">
                         <br>
                         <label for="" style="width:30%;">Imagen del anime: </label>
                         <input class="from-comtrol" type="file" name="img">
@@ -26,9 +26,10 @@ $obj = new connection();
                         <br>
                         <label for="" style="width:30%;">Descripcion</label>
                         <textarea class="form-control" type="textarea" name="descripcion" rows="3" id=""></textarea>
+                        <br>
                         <div class="form-group form-group-inline">
-                            <label for="genero">Genero:</label>
-                            <select name="genero" class="form-select" aria-label="Default select example">
+                            <label style="width:30%;">Genero:</label>
+                            <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccione un genero</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -36,13 +37,15 @@ $obj = new connection();
                             </select>
                         </div>
                         <br>
-                        <label for="">Tipo:</label>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un tipo</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <div class="form-group form-group-inline">
+                            <label for="" style="width:30%;">Tipo:</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Seleccione un tipo</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -57,8 +60,9 @@ $obj = new connection();
                                 <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
                             </div>
                         </div>
-                        <label for="" style="width:30%;">No. Temporada:</label>
                         <br>
+                        <label for="" style="width:30%;">No. Temporada:</label>
+                        <br> 
                         <?php
                         $num=1;
                         if(isset($_POST['Enviar1'])){
@@ -76,20 +80,23 @@ $obj = new connection();
                         <?php
                         }
                         ?>
-                        Temporadas vista
+
+                        <br>
+                        Ultima temporada vista
                         <br>
                         Temporada: <input type="number" name="temporadav" id="">
                         <br>
                         capitulo: <input type="number" name="capitulosv" id="">
-                        <br>
-                        <input class="btn btn-success" type="submit" name="Enviar2" value="Guardar temporadas">
-                        <br>
                     </form>
                 </div>
             </div>
         </div>
+        <div class="card-footer">
+            <p>
+                <input class="btn btn-success" type="submit" name="Enviar2" value="Guardar anime">
+            </p>
+        </div>
     </div>
-
 </div>
 </div>
 
