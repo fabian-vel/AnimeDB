@@ -1,7 +1,7 @@
 <?php 
 include('./header.php');
 include('./connection/connection.php');
-include('./action/recordData.php');
+include('./action/recordDataAnime.php');
 $obj = new connection();
 ?>
 <br>
