@@ -14,13 +14,19 @@
         <nav class="navbar justify-content-end" style="background-color: #e3f2fd;">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="./Login.php">Login</a>
+                    <a class="nav-link" href="./login/Login.php">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./anime.php">Registro Animes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Logup.php">Salir</a>
+                    <a class="nav-link" href="./genero.php">Genero</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./tipo.php">Tipo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login/Logup.php">Salir</a>
                 </li>
             </ul>
         </nav>
