@@ -52,9 +52,9 @@ $obj = new connection();
                         Temporadas del anime
                         <br>
                         <div class="input-group">
-                            <input type="number" name="Notemporadaa" id="" min="1" required>
+                            <input type="number" name="Notemporadaa" id="" min="1" required value="1">
                             <div class="input-group-append">
-                                <input class="btn btn-outline-secondary" type="submit" name="Enviar1" value="Enviar T">
+                                <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
                             </div>
                         </div>
                         <label for="" style="width:30%;">No. Temporada:</label>
@@ -76,37 +76,17 @@ $obj = new connection();
                         <?php
                         }
                         ?>
-                        <br>
-                        <input class="btn btn-success" type="submit" name="Enviar2" value="Guardar temporadas">
-                        <br>
                         Temporadas vista
                         <br>
                         Temporada: <input type="number" name="temporadav" id="">
                         <br>
                         capitulo: <input type="number" name="capitulosv" id="">
+                        <br>
+                        <input class="btn btn-success" type="submit" name="Enviar2" value="Guardar temporadas">
+                        <br>
                     </form>
                 </div>
             </div>
-            <!-- <div class="col-md-4">
-                <div class="card-body">
-                    <form action="anime.php">
-                        Genero:
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un genero</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <br>
-                        Tipo:
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione un tipo</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </form>
-                </div> -->
         </div>
     </div>
 
