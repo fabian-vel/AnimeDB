@@ -41,6 +41,7 @@ $obj = new connection();
                             <label for="" style="width:30%;">Tipo:</label>
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccione un tipo</option>
+                                <?php foreach()
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
