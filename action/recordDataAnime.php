@@ -5,6 +5,7 @@ if (isset($_POST['Enviar2'])) {
     AddAnime($objConnection);
     AddTemporada($objConnection);
     AddGenero_Anime($objConnection);
+    AddTipo_Anime($objConnection);
     header("location:anime.php");
 }
 
@@ -57,4 +58,12 @@ function AddGenero_Anime($objConnection)
         $sql = "INSERT INTO `genero_anime` (`genero_idg`, `Anime_idAnime`) VALUES ('$idgenero', '$idanime');";
         $objConnection->ejecutar($sql);
     }
+}
+
+function AddTipo_Anime($objConnection){
+    $idtipo = $_POST['tipoA'];
+    $idanime = $_POST['nombre'];
+
+    $sql = "INSERT INTO `tipo_anime` (`Tipo_idt`, `Anime_idAnime`) VALUES ('$idtipo', '$idanime');";
+    $objConnection->ejecutar($sql);
 }

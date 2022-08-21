@@ -53,7 +53,7 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                                 <?php
                                 foreach($tipos as $tipo){
                                 ?>
-                                <option value="<?php echo $tipo['idt']?>"><?php echo $tipo['nombret']?>
+                                <option name="tipoA" value="<?php echo $tipo['idt']?>"><?php echo $tipo['nombret']?>
                                 </option>
                                 <?php
                                 }
