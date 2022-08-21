@@ -3,6 +3,8 @@ include('./header.php');
 include('./connection/connection.php');
 include('./action/recordDataAnime.php');
 $obj = new connection();
+$generos=$obj->consultar("SELECT * FROM `genero`");
+$tipos=$obj->consultar("SELECT * FROM `tipo`");
 ?>
 <br>
 <div class="container">
@@ -31,9 +33,14 @@ $obj = new connection();
                             <label style="width:30%;">Genero:</label>
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccione un genero</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <?php
+                                foreach($generos as $individual){
+                                ?>
+                                <option value="<?php echo $individual['idg']?>"><?php echo $individual['nombreg']?>
+                                </option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                         <br>
@@ -41,10 +48,14 @@ $obj = new connection();
                             <label for="" style="width:30%;">Tipo:</label>
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Seleccione un tipo</option>
-                                <?php foreach()
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <?php
+                                foreach($tipos as $tipo){
+                                ?>
+                                <option value="<?php echo $tipo['idt']?>"><?php echo $tipo['nombret']?>
+                                </option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                     </form>
@@ -63,7 +74,7 @@ $obj = new connection();
                         </div>
                         <br>
                         <label for="" style="width:30%;">No. Temporada:</label>
-                        <br> 
+                        <br>
                         <?php
                         $num=1;
                         if(isset($_POST['Enviar1'])){
