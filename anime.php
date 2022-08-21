@@ -31,17 +31,19 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         <br>
                         <div class="form-group form-group-inline">
                             <label style="width:30%;">Genero:</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccione un genero</option>
+                            <div class="from-checkbox">
                                 <?php
                                 foreach($generos as $individual){
                                 ?>
-                                <option value="<?php echo $individual['idg']?>"><?php echo $individual['nombreg']?>
-                                </option>
+                                <input class="form-check-input" type="checkbox" value="<?php echo $individual['idg']?>"
+                                    id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    <?php echo $individual['nombreg']?>
+                                </label>
                                 <?php
                                 }
                                 ?>
-                            </select>
+                            </div>
                         </div>
                         <br>
                         <div class="form-group form-group-inline">
