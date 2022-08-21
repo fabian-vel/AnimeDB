@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['Enviar2'])) {
+if (isset($_POST['Enviar'])) {
     $objConnection = new connection();
     AddAnime($objConnection);
     AddTemporada($objConnection);

@@ -101,14 +101,15 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         Temporada: <input type="number" name="temporadav" id="">
                         <br>
                         capitulo: <input type="number" name="capitulosv" id="">
+                        <p>
+                <input class="btn btn-success" type="submit" name="Enviar" value="Guardar anime">
+            </p>
                     </form>
                 </div>
             </div>
         </div>
         <div class="card-footer">
-            <p>
-                <input class="btn btn-success" type="submit" name="Enviar2" value="Guardar anime">
-            </p>
+            
         </div>
     </div>
 </div>
