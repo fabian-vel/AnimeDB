@@ -1,18 +1,18 @@
 <?php
 
 if(isset($_POST['Enviar2'])){
+    $objConnection = new connection();
     AddAnime();
     AddTemporada();
     header("location:anime.php");
 }
 
-function AddAnime()
+function AddAnime($objConnection)
 {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
     $estado = $_POST['estado'];
     $img = uploadImg();
-    $objConnection = new connection();
 
     $sql = "INSERT INTO `anime` (`idAnime`, `nombrea`, `imagen`, `estado`, `descripcion`) VALUES ('$nombre', '$nombre', '$img', '$estado', '$descripcion');";
     $objConnection->ejecutar($sql);
@@ -34,9 +34,8 @@ function uploadImg()
     return $imagen;
 }
 
-function AddTemporada()
+function AddTemporada($objConnection)
 {
-    $objConnection = new connection();
     $numTenporada = $_POST['tempor'];
     $nombre = $_POST['nombre'];
     print_r($_POST);
@@ -46,4 +45,8 @@ function AddTemporada()
         $sql = "INSERT INTO `temporada` (`idtemporada`, `capitulo`, `numero`, `Anime_idAnime`) VALUES (NULL,'$capitulo','$i','$nombre');";
         $objConnection->ejecutar($sql);
     }
+}
+
+function AddTipo_Anime($objConnection){
+
 }
