@@ -35,7 +35,7 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                                 <?php
                                 foreach($generos as $individual){
                                 ?>
-                                <input class="form-check-input" type="checkbox" value="<?php echo $individual['idg']?>"
+                                <input class="form-check-input" type="checkbox" name="genero[]" value="<?php echo $individual['idg']?>"
                                     id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     <?php echo $individual['nombreg']?>
