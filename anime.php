@@ -13,10 +13,10 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
             <h3>Registro del Anime</h3>
         </div>
         <div class="row">
-        <form method="post" enctype="multipart/form-data">
-            <div class="col-md-6">
-                <div class="card-body">
-                    
+            <form method="post" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <div class="card-body">
+
                         <label for="" style="width:30%;">Nombre del anime: </label>
                         <input required type="text" name="nombre">
                         <br>
@@ -61,15 +61,13 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                                 ?>
                             </select>
                         </div>
-                    
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-body">
-                    
+                <div class="col-md-6">
+                    <div class="card-body">
                         Temporadas del anime
                         <br>
-                        <div class="input-group">
+                        <div method="get"class="input-group">
                             <input type="number" name="Notemporadaa" id="" min="1" required value="1">
                             <div class="input-group-append">
                                 <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
@@ -80,8 +78,8 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         <br>
                         <?php
                         $num=1;
-                        if(isset($_POST['Enviar1'])){
-                            $num=$_POST['Notemporadaa'];
+                        if(isset($_GET['Enviar1'])){
+                            $num=$_GET['Notemporadaa'];
                         }
                         ?>
                         <input type="hidden" name="tempor" value="<?php echo $num;?>">
@@ -95,7 +93,6 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         <?php
                         }
                         ?>
-
                         <br>
                         Ultima temporada vista
                         <br>
@@ -105,13 +102,11 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         <p>
                             <input class="btn btn-success" type="submit" name="Enviar" value="Guardar anime">
                         </p>
-                    
+                    </div>
                 </div>
-            </div>
             </form>
         </div>
         <div class="card-footer">
-
         </div>
     </div>
 </div>
