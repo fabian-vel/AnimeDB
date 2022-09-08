@@ -13,9 +13,10 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
             <h3>Registro del Anime</h3>
         </div>
         <div class="row">
+        <form method="post" enctype="multipart/form-data">
             <div class="col-md-6">
                 <div class="card-body">
-                    <form method="post" enctype="multipart/form-data">
+                    
                         <label for="" style="width:30%;">Nombre del anime: </label>
                         <input required type="text" name="nombre">
                         <br>
@@ -35,8 +36,8 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                                 <?php
                                 foreach($generos as $individual){
                                 ?>
-                                <input class="form-check-input" type="checkbox" name="genero[]" value="<?php echo $individual['idg']?>"
-                                    id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="genero[]"
+                                    value="<?php echo $individual['idg']?>" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     <?php echo $individual['nombreg']?>
                                 </label>
@@ -48,24 +49,24 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         <br>
                         <div class="form-group form-group-inline">
                             <label for="" style="width:30%;">Tipo:</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="tipoA">
                                 <option selected>Seleccione un tipo</option>
                                 <?php
                                 foreach($tipos as $tipo){
                                 ?>
-                                <option name="tipoA" value="<?php echo $tipo['idt']?>"><?php echo $tipo['nombret']?>
+                                <option value="<?php echo $tipo['idt']?>"><?php echo $tipo['nombret']?>
                                 </option>
                                 <?php
                                 }
                                 ?>
                             </select>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-body">
-                    <form method="post">
+                    
                         Temporadas del anime
                         <br>
                         <div class="input-group">
@@ -102,14 +103,15 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         <br>
                         capitulo: <input type="number" name="capitulosv" id="">
                         <p>
-                <input class="btn btn-success" type="submit" name="Enviar" value="Guardar anime">
-            </p>
-                    </form>
+                            <input class="btn btn-success" type="submit" name="Enviar" value="Guardar anime">
+                        </p>
+                    
                 </div>
             </div>
+            </form>
         </div>
         <div class="card-footer">
-            
+
         </div>
     </div>
 </div>

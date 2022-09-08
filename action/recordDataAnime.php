@@ -3,7 +3,6 @@
 if (isset($_POST['Enviar'])) {
     $objConnection = new connection();
     AddAnime($objConnection);
-    AddTemporada($objConnection);
     AddGenero_Anime($objConnection);
     AddTipo_Anime($objConnection);
     header("location:anime.php");
@@ -18,6 +17,7 @@ function AddAnime($objConnection)
 
     $sql = "INSERT INTO `anime` (`idAnime`, `nombrea`, `imagen`, `estado`, `descripcion`) VALUES ('$nombre', '$nombre', '$img', '$estado', '$descripcion');";
     $objConnection->ejecutar($sql);
+    AddTemporada($objConnection);
 }
 
 function uploadImg()
