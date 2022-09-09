@@ -67,7 +67,7 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                     <div class="card-body">
                         Temporadas del anime
                         <br>
-                        <div method="get"class="input-group">
+                        <div method="get" class="input-group">
                             <input type="number" name="Notemporadaa" id="" min="1" required value="1">
                             <div class="input-group-append">
                                 <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
