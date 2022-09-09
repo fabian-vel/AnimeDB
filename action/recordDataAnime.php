@@ -5,7 +5,7 @@ if (isset($_POST['Enviar'])) {
     AddAnime($objConnection);
     AddGenero_Anime($objConnection);
     AddTipo_Anime($objConnection);
-    header("location:anime.php");
+    
 }
 
 function AddAnime($objConnection)

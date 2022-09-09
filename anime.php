@@ -18,7 +18,7 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                     <div class="card-body">
 
                         <label for="" style="width:30%;">Nombre del anime: </label>
-                        <input required type="text" name="nombre">
+                        <input type="text" name="nombre">
                         <br>
                         <label for="" style="width:30%;">Imagen del anime: </label>
                         <input class="from-comtrol" type="file" name="img">
@@ -67,7 +67,8 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                     <div class="card-body">
                         Temporadas del anime
                         <br>
-                        <div method="get" class="input-group">
+                        <form action="" method="get">
+                        <div class="input-group">
                             <input type="number" name="Notemporadaa" id="" min="1" required value="1">
                             <div class="input-group-append">
                                 <input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T">
@@ -93,6 +94,7 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         <?php
                         }
                         ?>
+                        </form>
                         <br>
                         Ultima temporada vista
                         <br>
