@@ -17,17 +17,17 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                 <div class="col-md-6">
                     <div class="card-body">
                         <label for="" style="width:30%;">Nombre del anime: </label>
-                        <input type="text" name="nombre">
+                        <input required type="text" name="nombre">
                         <br>
                         <label for="" style="width:30%;">Imagen del anime: </label>
                         <input class="from-comtrol" type="file" name="img">
                         <br>
                         <label for="" style="width:30%;">Estado:</label>
-                        Terminado <input class="from-comtrol" type="radio" name="estado" value="0">
-                        En Proceso <input class="from-comtrol" type="radio" name="estado" value="1">
+                        <input class="from-comtrol" type="radio" name="estado" value="0"> Terminado 
+                        <input class="from-comtrol" type="radio" name="estado" value="1"> En Proceso 
                         <br>
                         <label for="" style="width:30%;">Descripcion</label>
-                        <textarea class="form-control" type="textarea" name="descripcion" rows="3" id=""></textarea>
+                        <textarea class="form-control" type="textarea" name="descripcion" rows="3"></textarea>
                         <br>
                         <div class="form-group form-group-inline">
                             <label style="width:30%;">Genero:</label>
@@ -66,11 +66,9 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                     <div class="card-body">
                         Temporadas del anime
                         <br>
-
                         <div class="input-group">
                             <input type="number" name="Notemporadaa" id="" min="1" required value="1">
                             <div class="input-group-append">
-                                <!---<input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T" formmethod="get"> --->
                                 <button class="btn btn-success" type="button" id="enviarTem">Enviar Tem</button>
                             </div>
                         </div>
@@ -94,6 +92,8 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         Temporada: <input type="number" name="temporadav" id="">
                         <br>
                         capitulo: <input type="number" name="capitulosv" id="">
+                        <br>
+                        <br>
                         <p>
                             <input class="btn btn-success" type="submit" name="Enviar" value="Guardar anime">
                         </p>
