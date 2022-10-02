@@ -12,11 +12,10 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
         <div class="card-header">
             <h3>Registro del Anime</h3>
         </div>
-        <div class="row">
-            <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" id="formulario">
+            <div class="row">
                 <div class="col-md-6">
                     <div class="card-body">
-
                         <label for="" style="width:30%;">Nombre del anime: </label>
                         <input type="text" name="nombre">
                         <br>
@@ -67,35 +66,28 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                     <div class="card-body">
                         Temporadas del anime
                         <br>
-                        <form>
-                            <div class="input-group">
-                                <input type="number" name="Notemporadaa" id="" min="1" required value="1">
-                                <div class="input-group-append">
-                                    <!---<input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T" formmethod="get"> --->
-                                    <button class="btn btn-success" type="submit" formmethod="post">Enviar Tem</button>
-                                </div>
+
+                        <div class="input-group">
+                            <input type="number" name="Notemporadaa" id="" min="1" required value="1">
+                            <div class="input-group-append">
+                                <!---<input class="btn btn-success" type="submit" name="Enviar1" value="Enviar T" formmethod="get"> --->
+                                <button class="btn btn-success" type="button" id="enviarTem">Enviar Tem</button>
                             </div>
-                            <br>
-                            <label for="" style="width:30%;">No. Temporada:</label>
-                            <br>
-                            <?php
-                                $num=1;
-                                if(isset($_POST['Enviar1'])){
-                                $num=$_POST['Notemporadaa'];
-                            }
-                            ?>
-                            <input type="hidden" name="tempor" value="<?php echo $num;?>">
-                            <?php
-                                for($i=1;$i<=$num;$i++){
-                                $cap="capitulos".$i;
-                            ?>
-                            <label for="" style="width:30%;">Capitulos de la temp. <?php echo $i; ?>: </label>
-                            <input type="number" name="<?php echo $cap;?>" min="1">
-                            <br>
-                            <?php
+                        </div>
+                        <br>
+                        <div id="numTemporada"></div>
+                        <script>
+                        $("#enviarTem").click(function() {
+                            $.ajax({
+                                url: "./numeroTemporadas.php",
+                                type: "post",
+                                data: $("#formulario").serialize(),
+                                success: function(resultado) {
+                                    $("#numTemporada").html(resultado);
                                 }
-                            ?>
-                        </form>
+                            });
+                        });
+                        </script>
                         <br>
                         Ultima temporada vista
                         <br>
@@ -107,8 +99,8 @@ $tipos=$obj->consultar("SELECT * FROM `tipo`");
                         </p>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
         <div class="card-footer">
         </div>
     </div>
